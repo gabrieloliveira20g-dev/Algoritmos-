@@ -1,116 +1,97 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laboratório de Algoritmos - Gabriel</title>
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 40px; background-color: #f4f4f9; color: #333; }
-        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
-        .container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
-        button { 
-            padding: 12px 20px; 
-            cursor: pointer; 
-            background-color: #3498db; 
-            color: white; 
-            border: none; 
-            border-radius: 5px; 
-            transition: background 0.3s;
-        }
-        button:hover { background-color: #2980b9; }
-    </style>
+  <meta charset="UTF-8">
+  <title>Lista de Exercícios - Algoritmos</title>
+  <style>
+    body { font-family: Arial; background:#0f172a; color:#fff; text-align:center; }
+    h1 { margin-top:20px; }
+    .container { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:15px; padding:20px; }
+    .card { background:#1e293b; padding:15px; border-radius:12px; }
+    button { padding:10px; border:none; border-radius:8px; cursor:pointer; }
+  </style>
 </head>
 <body>
 
-    <h1>Exercícios: Estrutura Sequencial 2026/1</h1>
-    <p>Selecione um exercício para testar a lógica:</p>
+<h1>Lista de Exercícios - Estrutura Sequencial</h1>
 
-    <div class="container">
-        <button onclick="ex01()">1. Soma</button>
-        <button onclick="ex02()">2. Antecessor/Sucessor</button>
-        <button onclick="ex03()">3. Média Semestre</button>
-        <button onclick="ex04()">4. Conversor Moeda</button>
-        <button onclick="ex05()">5. Área Terreno</button>
-        <button onclick="ex06()">6. Celsius p/ Fahrenheit</button>
-        <button onclick="ex07()">7. Desconto 15%</button>
-        <button onclick="ex08()">8. Conta Restaurante</button>
-        <button onclick="ex09()">9. Dias Vividos</button>
-        <button onclick="ex10()">10. Salário Dev</button>
-    </div>
+<div class="container">
 
-    <script>
-        // 1. O Clássico da Soma
-        function ex01() {
-            let n1 = Number(prompt("Digite o primeiro número:"));
-            let n2 = Number(prompt("Digite o segundo número:"));
-            alert(`A soma de ${n1} + ${n2} é: ${n1 + n2}`);
-        }
+<div class="card"><button onclick="ex1()">1. Soma</button></div>
+<div class="card"><button onclick="ex2()">2. Antecessor/Sucessor</button></div>
+<div class="card"><button onclick="ex3()">3. Média</button></div>
+<div class="card"><button onclick="ex4()">4. Conversor</button></div>
+<div class="card"><button onclick="ex5()">5. Área</button></div>
+<div class="card"><button onclick="ex6()">6. Temperatura</button></div>
+<div class="card"><button onclick="ex7()">7. Desconto</button></div>
+<div class="card"><button onclick="ex8()">8. Restaurante</button></div>
+<div class="card"><button onclick="ex9()">9. Dias de Vida</button></div>
+<div class="card"><button onclick="ex10()">10. Salário</button></div>
 
-        // 2. O Vizinho
-        function ex02() {
-            let n = Number(prompt("Digite um número:"));
-            alert(`Você digitou ${n}. Antecessor: ${n-1} | Sucessor: ${n+1}`);
-        }
+</div>
 
-        // 3. A Média do Semestre
-        function ex03() {
-            let nome = prompt("Nome do aluno:");
-            let n1 = Number(prompt("Nota 1:"));
-            let n2 = Number(prompt("Nota 2:"));
-            let n3 = Number(prompt("Nota 3:"));
-            let media = (n1 + n2 + n3) / 3;
-            alert(`Aluno: ${nome}\nMédia Final: ${media.toFixed(2)}`);
-        }
+<script>
+function ex1(){
+ let n1 = Number(prompt("Digite o primeiro número:"));
+ let n2 = Number(prompt("Digite o segundo número:"));
+ alert("Soma: " + (n1+n2));
+}
 
-        // 4. Conversor de Moedas
-        function ex04() {
-            let reais = Number(prompt("Valor em Reais (R$):"));
-            let dolares = reais / 5.00;
-            alert(`Com R$${reais.toFixed(2)} você pode comprar US$${dolares.toFixed(2)}`);
-        }
+function ex2(){
+ let n = Number(prompt("Digite um número:"));
+ alert(`Antecessor: ${n-1} | Sucessor: ${n+1}`);
+}
 
-        // 5. Medidas de um Terreno
-        function ex05() {
-            let l = Number(prompt("Largura (m):"));
-            let c = Number(prompt("Comprimento (m):"));
-            alert(`A área total do terreno é: ${l * c}m²`);
-        }
+function ex3(){
+ let nome = prompt("Nome:");
+ let n1 = Number(prompt("Nota 1:"));
+ let n2 = Number(prompt("Nota 2:"));
+ let n3 = Number(prompt("Nota 3:"));
+ let m = (n1+n2+n3)/3;
+ alert(`${nome}, média: ${m.toFixed(2)}`);
+}
 
-        // 6. Temperatura Global
-        function ex06() {
-            let c = Number(prompt("Graus Celsius:"));
-            let f = (c * 1.8) + 32;
-            alert(`${c}°C equivale a ${f.toFixed(1)}°F`);
-        }
+function ex4(){
+ let r = Number(prompt("Reais:"));
+ alert("Dólares: " + (r/5).toFixed(2));
+}
 
-        // 7. Promoção de Loja
-        function ex07() {
-            let preco = Number(prompt("Preço do produto:"));
-            let desc = preco * 0.15;
-            alert(`Original: R$${preco.toFixed(2)}\nDesconto: R$${desc.toFixed(2)}\nFinal: R$${(preco - desc).toFixed(2)}`);
-        }
+function ex5(){
+ let l = Number(prompt("Largura:"));
+ let c = Number(prompt("Comprimento:"));
+ alert("Área: " + (l*c) + " m²");
+}
 
-        // 8. Conta do Restaurante
-        function ex08() {
-            let conta = Number(prompt("Valor da conta:"));
-            let taxa = conta * 0.10;
-            alert(`Consumo: R$${conta.toFixed(2)}\nGorjeta: R$${taxa.toFixed(2)}\nTotal: R$${(conta + taxa).toFixed(2)}`);
-        }
+function ex6(){
+ let c = Number(prompt("Celsius:"));
+ alert("Fahrenheit: " + ((c*9/5)+32));
+}
 
-        // 9. Dias de Vida
-        function ex09() {
-            let idade = Number(prompt("Sua idade:"));
-            alert(`Você já viveu aproximadamente ${idade * 365} dias!`);
-        }
+function ex7(){
+ let p = Number(prompt("Preço:"));
+ let d = p*0.15;
+ alert(`Final: ${p-d} (Desconto: ${d})`);
+}
 
-        // 10. Salário do Dev
-        function ex10() {
-            let h = Number(prompt("Horas trabalhadas:"));
-            let v = Number(prompt("Valor por hora:"));
-            let bruto = h * v;
-            let liq = bruto - (bruto * 0.08);
-            alert(`Salário Bruto: R$${bruto.toFixed(2)}\nSalário Líquido (Desc. 8%): R$${liq.toFixed(2)}`);
-        }
-    </script>
+function ex8(){
+ let v = Number(prompt("Conta:"));
+ let g = v*0.10;
+ alert(`Total: ${v+g} (Gorjeta: ${g})`);
+}
+
+function ex9(){
+ let i = Number(prompt("Idade:"));
+ alert("Dias vividos: " + (i*365));
+}
+
+function ex10(){
+ let h = Number(prompt("Horas:"));
+ let vh = Number(prompt("Valor hora:"));
+ let b = h*vh;
+ let l = b - (b*0.08);
+ alert(`Bruto: ${b} | Líquido: ${l}`);
+}
+</script>
+
 </body>
 </html>
